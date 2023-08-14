@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Dashboard</title>
+      <link rel="stylesheet" href="dashboard.css">
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
+   </head>
+   <body>
+    <div class="main">
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <div class="bell">
+            <i class="fas fa-bell"></i>
+            </div>
+            <div class="msg">
+                <i class="fas fa-comment"></i>
+            </div>
+            <div class="pic">
+             <a><i class="fas fa-user-alt" style="top: 17px; border-radius: 50%;" ></i></a>
+            </div>
+        </div>    
+    </div>
+      <nav class="sidebar">
+         <div class="text" style="background-color: #37a3e2;">
+            <img class="logo"src="http://localhost/dashboard\1.jpg" alt="Covalsys logox" width="40px" >
+            Covalsys
+         </div>
+       <div class="color">
+         <ul>
+            <li class="and-btn">
+                <a href="#">Dashboard              
+                    <span class="fas fa-caret-down first"></span>
+                </a>
+                    <ul class="and-show">
+                       <li><a href="#">Classic</a></li>
+                       <li><a href="#">minimal</a></li>
+                    </ul>
+            </li>
+            <li>
+               <a href="#" class="feat-btn">Features
+               <span class="fas fa-caret-down first"></span>
+               </a>
+               <ul class="feat-show">
+                  <li><a href="#">Pages</a></li>
+                  <li><a href="#">Elements</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#" class="serv-btn">Services
+               <span class="fas fa-caret-down second"></span>
+               </a>
+               <ul class="serv-show">
+                  <li><a href="#">App Design</a></li>
+                  <li><a href="#">Web Design</a></li>
+               </ul>
+            </li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Shortcuts</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="http://localhost/dashboard/Log.html">Log Out</a>
+            <label class="ART"><i class="fas fa-sign-out-alt"></i></label></li>
+         </ul>
+   </div>
+      </nav>
+<div class="side">
+    <div class="left">
+        <div class="grid1" style="background-color:#1013db;">
+          <p>Total Income</p>
+          <h2>$579,000</h2>
+          <p class="small">Saved 25%</p>
+          <label class="big"><i class="fas fa-chart-line"></i></label>
+        </div>
+        <div class="grid2" style="background-color: #970a84;">
+            <p>Cash on Hand</p>
+            <h2>$92,000</h2>
+            <p class="small">Saved 25%</p>
+            <label class="big"><i class="fas fa-hand-holding-usd"></i></label>
+        </div>
+    </div>
+    <div>
+      <div class="right">
+        <div class="grid3" style="background-color:#37a3e2;">
+          <p>Total Expences</p>
+          <h2>$79,000</h2>
+          <p>Saved 25%</p>
+          <label class="big"><i class='fa fa-briefcase'></i></label>
+        </div>
+        <div class="grid4" style="background-color:#4ecf5f;">
+          <h2>Net Profit Margin</h2>
+          <p>$179,000</p>
+          <p>Saved 65%</p>
+          <label class="big"><i class='fas fa-balance-scale-left'></i></label>
+        </div>
+    </div>
+</div>  
+<div class='barcontainer'>
+    <div class='barcontainerheader'>
+        SENSEX(2022-23)
+    </div>
+    <div class='bar' style='height:30%'>
+        TTS
+    <div class='barlabel'>
+        30%
+    </div>
+    </div>
+    <div class='bar' style='height: 35%'>
+      SANGO
+      <div class='barlabel'>
+          35%
+      </div>
+    </div>
+    <div class='bar' style='height: 40%'>
+      POSCO HYUNDAI
+      <div class='barlabel'>
+        40%
+      </div>
+    </div>
+    <div class='bar' style='height:45%'>
+      SAI
+      <div class='barlabel'>
+      45% 
+      </div>
+    </div>
+    <div class='bar' style='height:50%'>
+    JSW
+    <div class='barlabel'>
+      50%
+    </div>
+    </div>
+    <div class='bar' style='height:70%'>
+    KASA
+    <div class='barlabel'>
+      70%
+    </div>
+    </div>
+</div>
+<div class="pie_chart_continer">
+  <div class="piechart1"></div>
+  <div class="piechart2"></div>
+</div>
+
+<script>
+         $('.btn').click(function(){
+           $(this).toggleClass("click");
+           $('.sidebar').toggleClass("show");
+         });
+         $('.and-btn').click(function()
+         {
+             $('nav ul .and-show').toggleClass("show");
+             $('nav ul .first').toggleClass("rotate");
+           });
+           $('.feat-btn').click(function(){
+             $('nav ul .feat-show').toggleClass("show1");
+             $('nav ul .second').toggleClass("rotate");
+           });
+           $('.serv-btn').click(function(){
+             $('nav ul .serv-show').toggleClass("show2");
+             $('nav ul .third').toggleClass("rotate");
+           });
+           $('nav ul li').click(function(){
+             $(this).addClass("active").siblings().removeClass("active");
+           });
+           
+var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var yValues = [55, 49, 44, 24, 15];
+var barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+});
+var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var yValues = [55, 49, 44, 24, 15];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+
+          </script>
+   </body>
+</html>
