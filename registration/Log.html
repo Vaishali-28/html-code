@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>LogIn</title>
+      <style>
+         img
+         {
+         border-radius:50%;
+         height: 100px;
+         }
+      </style>
+      <meta http-equiv="reload" content="5">
+      <link rel="stylesheet" href="log.css">
+    </head>
+    <body>
+        <div class="center">
+            <form id="myForm">
+                <div class="c">
+                    <div class="m">
+                        <div class="line">LOGIN</div>
+                        <img src="http://localhost/registration/7.jpg" alt="avatar" style="width: 100px; ">
+                    </div>
+                </div>
+                <div class="c">
+                    <div class="d">
+                        <span class="e">Username</span>
+                        <input type="text" placeholder="Enter Your Username" required name="Username">
+                    </div>
+                </div>
+                <div class="c">
+                    <div class="d">
+                        <span class="e">Password</span>
+                        <input type="text" placeholder="Enter Your Password" required name="Password">
+                    </div>
+                </div>
+                <div class="ab">
+                    <span><input type="checkbox" >Remember me</span>                
+                </div>
+                <div class="j">
+                    <input type="submit" value="LogIn">
+                </div>
+                <div class="e" style="text-align: center;">
+                    <span>Not a Member?</span>
+                    <a href="http://localhost/registration/registration.html">Signup now</a>
+                </div>
+                <div class="error_container">
+                    <div class="popup" id="popup">
+                        <img src="wrong_tic.png" alt="wrong tick">
+                        <h2>Error</h2>
+                        <p>The entered details are not appropriate</p>
+                        <button type="button"onclick="closePopup()" class="btn">OK</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script>
+        const popup=document.getElementById("popup");
+    
+        function closePopup() {
+            popup.style.display = "none";
+        
+        }
+    
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the default form submission
+    
+                // Get form data
+                var formData = new FormData(event.target);
+    
+                // Create an XMLHttpRequest object
+                var xhr = new XMLHttpRequest();
+    
+                // Configure the request
+                xhr.open("POST", "http://localhost/registration/login.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+                // Handle request state change
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 301) {
+                            window.location.href="http://localhost/registration/dashboard.html";
+                        } else {
+                            popup.style.display="block";
+                            popup.classList.add(popup);
+                        }
+                    }
+                };
+    
+                // Send the request with form data
+                xhr.send(new URLSearchParams(formData));
+            });
+    </script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="value=Register">
+</head>
+<body>
+    <div class="center">
+        <div class="line">Registration</div>
+          <form id="myForm">
+            <div class="c">
+                <div class="d">
+                    <span class="e">Fullname</span>
+                    <input id="Fullname" type="text" placeholder="Enter Your Name" required name="FullName">
+                </div>
+                <div class="d">
+                    <span class="e">Username</span>
+                    <input id="username" type="text" placeholder="Enter Your UserName" required name= "Username">
+                </div>
+                <div class="d">
+                    <span class="e">Email</span>
+                    <input id="email" type="text" placeholder="Enter Your Email" required name="Email">
+                </div>
+                <div class="d">
+                    <span class="e">PhoneNumber</span>
+                    <input id="phone_number" type="text" placeholder="Enter Your Number" required name="PhoneNumber">
+                </div>
+                <div class="d">
+                    <span class="e">Password</span>
+                    <input id="password" type="password" placeholder="Enter Your Password" required name="Password">
+                </div>
+                <div class="d">
+                    <span class="e">ConfirmPassword</span>
+                    <input id="confirm_password" type="password" placeholder="Confirm your Password" required name="ConfirmPassword">
+                </div>
+            </div>
+            <div class="gender-details">
+                <input type="radio" name="Gender" id="dot-1">
+                <input type="radio" name="Gender" id="dot-2">
+                <input type="radio" name="Gender" id="dot-3">
+
+                <span class="f">Gender</span>
+                <div class="g">
+                    <label for="dot-1">
+                        <span class="h one"></span>
+                        <span class="i">Male</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="h two"></span>
+                        <span class="i">Female</span>
+                    </label>
+                    <label for="dot-3">
+                        <span class="h three"></span>
+                        <span class="i">Prefer not to say</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="j">
+                <input type="submit" value="Register" onclick="validForm()" >
+            </div>
+            <div style="text-align: center;">
+                <span>Are you a Member?</span>
+                <a href="http://localhost/registration/Log.html">Login</a>
+            </div>
+            <div class="error_container">
+                
+                <div class="popup" style="display:none" id="popup">
+                    <img src="right_tick.png" alt="right_tick">
+                    <h2>sucessfull</h2>
+                    <p>registration was sucessfull</p>
+                    <button type="button"onclick="closePopup()" class="btn">OK</button>
+                </div>
+            </div>
+            </form> 
+    </div>
+    <script src="validation.js">
+
+    </script>
+</body>
+</html>
